@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Muhammad Shahmeer | Data & AI Engineering Portfolio</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brandBg: '#F8F9FA',
+            brandDark: '#111827',
+            brandBlue: '#2563EB',
+            brandGray: '#E5E7EB',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-brandBg text-brandDark font-sans antialiased selection:bg-brandBlue selection:text-white">
+
+  <!-- Header / Navigation -->
+  <header class="sticky top-0 z-50 bg-brandBg/90 backdrop-blur-md border-b border-brandGray">
+    <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+      <!-- Monogram Logo -->
+      <a href="#" class="flex items-center gap-2 font-mono font-bold text-lg text-brandDark group">
+        <span class="w-8 h-8 rounded bg-brandDark text-brandBlue flex items-center justify-center font-mono text-sm group-hover:bg-brandBlue group-hover:text-white transition-colors">MS</span>
+        <span>Shahmeer<span class="text-brandBlue">.dev</span></span>
+      </a>
+      
+      <!-- Nav Links -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+        <a href="#about" class="hover:text-brandBlue transition-colors">About</a>
+        <a href="#cases" class="hover:text-brandBlue transition-colors">Case Studies</a>
+        <a href="#skills" class="hover:text-brandBlue transition-colors">Skills</a>
+        <a href="#contact" class="bg-brandDark text-white px-4 py-2 rounded-md hover:bg-brandBlue transition-colors">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="about" class="max-w-5xl mx-auto px-6 py-20 md:py-28">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-200 text-brandBlue text-xs font-mono mb-6">
+      <span class="w-2 h-2 rounded-full bg-brandBlue animate-pulse"></span>
+      Available for Data Science & AI Internships
+    </div>
+    
+    <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight leading-tight text-brandDark max-w-4xl mb-6">
+      I build <span class="text-brandBlue">local AI automation pipelines</span>, security analytics tools, and C++ engines that convert complex problems into verifiable code.
+    </h1>
+    
+    <p class="text-gray-600 text-lg md:text-xl max-w-2xl mb-8 leading-relaxed">
+      Data Science student at Air University. Focused on production-grade Python pipelines, custom LLM workflows with n8n, and low-level system design.
+    </p>
+
+    <div class="flex flex-wrap items-center gap-4">
+      <a href="#cases" class="bg-brandBlue text-white font-medium px-6 py-3 rounded-lg shadow-sm hover:bg-blue-700 transition-colors">
+        View Case Studies &rarr;
+      </a>
+      <a href="https://github.com" target="_blank" class="border border-brandGray bg-white text-brandDark font-medium px-6 py-3 rounded-lg hover:border-brandDark transition-colors flex items-center gap-2">
+        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+        GitHub Repositories
+      </a>
+    </div>
+  </section>
+
+  <!-- Featured Case Studies -->
+  <section id="cases" class="max-w-5xl mx-auto px-6 py-16 border-t border-brandGray">
+    <div class="mb-12">
+      <h2 class="text-2xl md:text-3xl font-bold text-brandDark">Featured Case Studies</h2>
+      <p class="text-gray-600 mt-2">Real engineering proof, code repositories, and execution metrics.</p>
+    </div>
+
+    <div class="grid grid-cols-1 gap-8">
+      
+      <!-- Case 1 -->
+      <div class="bg-white border border-brandGray rounded-xl p-8 shadow-sm hover:border-brandBlue transition-all">
+        <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
+          <span class="text-xs font-mono font-semibold px-2.5 py-1 bg-blue-50 text-brandBlue rounded">ETL / LOCAL AI PIPELINE</span>
+          <span class="text-xs font-mono text-gray-500">n8n • Slack API • Local CSV</span>
+        </div>
+        <h3 class="text-xl font-bold text-brandDark mb-3">Dynamic Local CSV Data Cleaning Pipeline</h3>
+        <p class="text-gray-600 mb-6 leading-relaxed">
+          Built an automated data ingestion workflow using n8n and Slack triggers to clean raw web analytics data. Handles custom null values ('N/A', 'null'), removes duplicate session IDs, and pushes structured data summaries to Slack channels automatically.
+        </p>
+        <div class="flex items-center gap-4 text-sm font-mono text-brandBlue font-medium">
+          <a href="#" class="hover:underline">Inspect Architecture &rarr;</a>
+          <a href="#" class="text-gray-500 hover:text-brandDark">View GitHub Repo</a>
+        </div>
+      </div>
+
+      <!-- Case 2 -->
+      <div class="bg-white border border-brandGray rounded-xl p-8 shadow-sm hover:border-brandBlue transition-all">
+        <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
+          <span class="text-xs font-mono font-semibold px-2.5 py-1 bg-gray-100 text-gray-800 rounded">ANALYTICS & SECURITY</span>
+          <span class="text-xs font-mono text-gray-500">Python • Pandas • Power BI</span>
+        </div>
+        <h3 class="text-xl font-bold text-brandDark mb-3">Sentinel-X Security Vulnerability Analytics</h3>
+        <p class="text-gray-600 mb-6 leading-relaxed">
+          Engineered an automated log parsing script that ingests raw vulnerability feeds, deduplicates CVE records, and formats structured telemetry for Power BI dashboard reporting with zero data loss.
+        </p>
+        <div class="flex items-center gap-4 text-sm font-mono text-brandBlue font-medium">
+          <a href="#" class="hover:underline">Read Case Study &rarr;</a>
+          <a href="#" class="text-gray-500 hover:text-brandDark">View GitHub Repo</a>
+        </div>
+      </div>
+
+      <!-- Case 3 -->
+      <div class="bg-white border border-brandGray rounded-xl p-8 shadow-sm hover:border-brandBlue transition-all">
+        <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
+          <span class="text-xs font-mono font-semibold px-2.5 py-1 bg-gray-100 text-gray-800 rounded">SYSTEMS & C++</span>
+          <span class="text-xs font-mono text-gray-500">C++17 • SFML • OOP</span>
+        </div>
+        <h3 class="text-xl font-bold text-brandDark mb-3">C++ SFML Real-Time Matrix Simulation & Game Engine</h3>
+        <p class="text-gray-600 mb-6 leading-relaxed">
+          Developed a windowed graphics rendering application applying Object-Oriented Design patterns, memory-safe grid management, and steady 60 FPS frame-rate limiting.
+        </p>
+        <div class="flex items-center gap-4 text-sm font-mono text-brandBlue font-medium">
+          <a href="#" class="hover:underline">View Gameplay Code &rarr;</a>
+          <a href="#" class="text-gray-500 hover:text-brandDark">View GitHub Repo</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Technical Skills Grid -->
+  <section id="skills" class="max-w-5xl mx-auto px-6 py-16 border-t border-brandGray">
+    <div class="mb-10">
+      <h2 class="text-2xl font-bold text-brandDark">Technical Capabilities</h2>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 font-mono text-sm">
+      <div class="p-5 bg-white border border-brandGray rounded-lg">
+        <h4 class="font-bold text-brandDark mb-3 border-b border-brandGray pb-2">Languages & Core</h4>
+        <ul class="space-y-2 text-gray-600">
+          <li>• Python (Data Analysis)</li>
+          <li>• C++ (OOP & Memory)</li>
+          <li>• SQL & Relational Databases</li>
+          <li>• HTML5 / CSS3 / Tailwind</li>
+        </ul>
+      </div>
+
+      <div class="p-5 bg-white border border-brandGray rounded-lg">
+        <h4 class="font-bold text-brandDark mb-3 border-b border-brandGray pb-2">Data & AI Engineering</h4>
+        <ul class="space-y-2 text-gray-600">
+          <li>• Pandas & Data Cleaning</li>
+          <li>• n8n Pipeline Automation</li>
+          <li>• Power BI Dashboards</li>
+          <li>• Scikit-Learn Basics</li>
+        </ul>
+      </div>
+
+      <div class="p-5 bg-white border border-brandGray rounded-lg">
+        <h4 class="font-bold text-brandDark mb-3 border-b border-brandGray pb-2">Tools & Environments</h4>
+        <ul class="space-y-2 text-gray-600">
+          <li>• Git & GitHub Versioning</li>
+          <li>• VS Code & Linux Terminal</li>
+          <li>• Proteus Simulation</li>
+          <li>• Vercel / GitHub Pages</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section / CTA -->
+  <section id="contact" class="max-w-5xl mx-auto px-6 py-20 border-t border-brandGray text-center">
+    <div class="max-w-xl mx-auto">
+      <h2 class="text-3xl font-extrabold text-brandDark mb-4">Let's Discuss Technical Projects</h2>
+      <p class="text-gray-600 mb-8">
+        Currently seeking data science opportunities and technical collaborations. Feel free to reach out directly.
+      </p>
+      
+      <a href="mailto:shahmeer@example.com" class="inline-block bg-brandDark text-white font-medium px-8 py-4 rounded-lg hover:bg-brandBlue transition-colors shadow-sm">
+        Schedule a Technical Discussion
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-brandGray py-8 bg-white text-center text-xs text-gray-500 font-mono">
+    <p>© 2026 Muhammad Shahmeer • Engineered with Tailwind CSS & Clean Aesthetics.</p>
+  </footer>
+
+</body>
+</html>
