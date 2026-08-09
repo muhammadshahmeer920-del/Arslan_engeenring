@@ -33,7 +33,38 @@
   href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&display=swap"
   rel="stylesheet"
 />
-<link rel="stylesheet" href="assets/css/style.css" />
+
+<style>
+  :root {
+    --bg: #F8F9FA;
+    --bg-raised: #FFFFFF;
+    --ink: #111827;
+    --metal: #4B5563;
+    --grid-line: #E5E7EB;
+  }
+
+  html.dark {
+    --bg: #0F172A;
+    --bg-raised: #1E293B;
+    --ink: #F8FAFC;
+    --metal: #94A3B8;
+    --grid-line: #334155;
+  }
+
+  body {
+    background-color: var(--bg);
+    color: var(--ink);
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  .cad-stage {
+    background-color: #000;
+  }
+
+  .wireframe-active img {
+    filter: invert(1) hue-rotate(180deg) contrast(1.5) brightness(0.9);
+  }
+</style>
 </head>
 <body class="font-body antialiased">
 
@@ -73,7 +104,6 @@
 
 <!-- ============================= HERO ============================= -->
 <section id="top" class="relative overflow-hidden">
-  <div class="absolute inset-0 blueprint-grid blueprint-grid-fade"></div>
   <div class="relative max-w-6xl mx-auto px-4 sm:px-6 pt-12 sm:pt-20 pb-16 sm:pb-28 md:pt-28 md:pb-32">
     <p class="font-mono text-xs tracking-widest text-accent mb-3 sm:mb-4">MECHANICAL ENGINEERING &middot; CAD &amp; PRODUCT DESIGN</p>
     <h1 class="font-display font-bold text-3xl sm:text-5xl md:text-6xl leading-[1.1] max-w-3xl">
@@ -118,11 +148,10 @@
     <!-- Project 1: FYP Amphibious Robot -->
     <article class="reveal rounded-xl border p-4 sm:p-5 md:col-span-2" style="border-color:var(--grid-line); background:var(--bg-raised)">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
-        <div class="cad-stage aspect-[4/3] cursor-zoom-in relative rounded-lg overflow-hidden" onclick="openLightbox('assets/img/fyp-amphibious-robot.png','Amphibious Spherical Surveillance Robot FYP assembly in SolidWorks')">
-          <span class="cad-callout-badge">FYP &middot; 2025&ndash;2026</span>
-          <img src="assets/img/fyp-amphibious-robot.png" alt="Amphibious Spherical Surveillance Robot — SolidWorks assembly" loading="lazy" class="w-full h-full object-cover" />
-          <div class="wireframe-overlay"></div>
-          <span class="zoom-hint">CLICK TO ZOOM</span>
+        <div class="cad-stage aspect-[4/3] cursor-zoom-in relative rounded-lg overflow-hidden" onclick="openLightbox(this.querySelector('img').src, 'Amphibious Spherical Surveillance Robot')">
+          <img src="assets/img/fyp-amphibious-robot.png" 
+               onerror="this.onerror=null; this.src='https://placehold.co/800x600/2563EB/ffffff?text=Amphibious+Robot+CAD';" 
+               alt="Amphibious Spherical Surveillance Robot — SolidWorks assembly" loading="lazy" class="w-full h-full object-cover transition-transform duration-300" />
         </div>
         <div>
           <h3 class="font-display font-bold text-lg sm:text-xl mb-1">Amphibious Spherical Surveillance Robot</h3>
@@ -141,10 +170,6 @@
               <dt class="font-mono text-xs" style="color:var(--metal)">SCOPE</dt>
               <dd class="font-medium">CAD modelling, prototyping, assembly, testing</dd>
             </div>
-            <div class="sm:col-span-2">
-              <dt class="font-mono text-xs" style="color:var(--metal)">ANALYSIS / PROTOTYPE STATUS</dt>
-              <dd class="text-xs sm:text-sm">Design modifications applied iteratively based on prototype performance and testing observations.</dd>
-            </div>
           </dl>
           <button onclick="toggleWireframe(this)" aria-pressed="false" class="w-full sm:w-auto font-mono text-xs border rounded px-3 py-2 sm:py-1.5 hover:bg-black/5 dark:hover:bg-white/5 transition" style="border-color:var(--grid-line)">
             WIREFRAME: OFF
@@ -155,16 +180,15 @@
 
     <!-- Project 2: Robot Assembly -->
     <article class="reveal rounded-xl border p-4 sm:p-5" style="border-color:var(--grid-line); background:var(--bg-raised)">
-      <div class="cad-stage aspect-[4/3] cursor-zoom-in mb-4 relative rounded-lg overflow-hidden" onclick="openLightbox('assets/img/robot-arm-assembly.png','Robot arm assembly in SolidWorks')">
-        <span class="cad-callout-badge">MATES &amp; MOTION</span>
-        <img src="assets/img/robot-arm-assembly.png" alt="Robot arm assembly — SolidWorks" loading="lazy" class="w-full h-full object-cover" />
-        <div class="wireframe-overlay"></div>
-        <span class="zoom-hint">CLICK TO ZOOM</span>
+      <div class="cad-stage aspect-[4/3] cursor-zoom-in mb-4 relative rounded-lg overflow-hidden" onclick="openLightbox(this.querySelector('img').src, 'Robot Arm Assembly')">
+        <img src="assets/img/robot-arm-assembly.png" 
+             onerror="this.onerror=null; this.src='https://placehold.co/800x600/2563EB/ffffff?text=Robot+Arm+Assembly';" 
+             alt="Robot arm assembly — SolidWorks" loading="lazy" class="w-full h-full object-cover" />
       </div>
       <h3 class="font-display font-bold text-lg mb-1">Robot Assembly</h3>
       <p class="text-sm mb-4" style="color:var(--metal)">
         Multi-component robotic arm assembly. Individual parts modeled and assembled using mates
-        to define motion and alignment, demonstrating mechanical movement and part interaction.
+        to define motion and alignment.
       </p>
       <div class="flex items-center justify-between pt-2 border-t" style="border-color:var(--grid-line)">
         <span class="font-mono text-xs" style="color:var(--metal)">TOOLS: SOLIDWORKS</span>
@@ -176,16 +200,14 @@
 
     <!-- Project 3: Lunch Box -->
     <article class="reveal rounded-xl border p-4 sm:p-5" style="border-color:var(--grid-line); background:var(--bg-raised)">
-      <div class="cad-stage aspect-[4/3] cursor-zoom-in mb-4 relative rounded-lg overflow-hidden" onclick="openLightbox('assets/img/lunch-box.png','Lunch box product design in SolidWorks')">
-        <span class="cad-callout-badge">IN-CONTEXT MODELING</span>
-        <img src="assets/img/lunch-box.png" alt="Lunch box — SolidWorks in-context modeling" loading="lazy" class="w-full h-full object-cover" />
-        <div class="wireframe-overlay"></div>
-        <span class="zoom-hint">CLICK TO ZOOM</span>
+      <div class="cad-stage aspect-[4/3] cursor-zoom-in mb-4 relative rounded-lg overflow-hidden" onclick="openLightbox(this.querySelector('img').src, 'Lunch Box SolidWorks')">
+        <img src="assets/img/lunch-box.png" 
+             onerror="this.onerror=null; this.src='https://placehold.co/800x600/2563EB/ffffff?text=Lunch+Box+SolidWorks';" 
+             alt="Lunch box — SolidWorks in-context modeling" loading="lazy" class="w-full h-full object-cover" />
       </div>
       <h3 class="font-display font-bold text-lg mb-1">Lunch Box</h3>
       <p class="text-sm mb-4" style="color:var(--metal)">
-        Created using in-context modeling, where components were designed within the assembly
-        environment — ensuring proper fit, alignment, and dimensional consistency while maintaining design intent.
+        Created using in-context modeling within assembly environments ensuring fit and dimensional consistency.
       </p>
       <div class="flex items-center justify-between pt-2 border-t" style="border-color:var(--grid-line)">
         <span class="font-mono text-xs" style="color:var(--metal)">TOOLS: SOLIDWORKS</span>
@@ -197,16 +219,14 @@
 
     <!-- Project 4: Bracket -->
     <article class="reveal rounded-xl border p-4 sm:p-5" style="border-color:var(--grid-line); background:var(--bg-raised)">
-      <div class="cad-stage aspect-[4/3] cursor-zoom-in mb-4 relative rounded-lg overflow-hidden" onclick="openLightbox('assets/img/bracket.png','Mechanical bracket in SolidWorks')">
-        <span class="cad-callout-badge">STRUCTURAL</span>
-        <img src="assets/img/bracket.png" alt="Mechanical bracket — SolidWorks" loading="lazy" class="w-full h-full object-cover" />
-        <div class="wireframe-overlay"></div>
-        <span class="zoom-hint">CLICK TO ZOOM</span>
+      <div class="cad-stage aspect-[4/3] cursor-zoom-in mb-4 relative rounded-lg overflow-hidden" onclick="openLightbox(this.querySelector('img').src, 'Mechanical Bracket')">
+        <img src="assets/img/bracket.png" 
+             onerror="this.onerror=null; this.src='https://placehold.co/800x600/2563EB/ffffff?text=Mechanical+Bracket';" 
+             alt="Mechanical bracket — SolidWorks" loading="lazy" class="w-full h-full object-cover" />
       </div>
       <h3 class="font-display font-bold text-lg mb-1">Bracket</h3>
       <p class="text-sm mb-4" style="color:var(--metal)">
-        A basic mechanical bracket designed with structural support in mind. Fillets were added
-        to reduce stress concentration and improve strength.
+        A basic mechanical bracket designed with stress-relief fillets to maximize load bearing.
       </p>
       <div class="flex items-center justify-between pt-2 border-t" style="border-color:var(--grid-line)">
         <span class="font-mono text-xs" style="color:var(--metal)">TOOLS: SOLIDWORKS</span>
@@ -218,16 +238,14 @@
 
     <!-- Project 5: Detergent Scoop -->
     <article class="reveal rounded-xl border p-4 sm:p-5" style="border-color:var(--grid-line); background:var(--bg-raised)">
-      <div class="cad-stage aspect-[4/3] cursor-zoom-in mb-4 relative rounded-lg overflow-hidden" onclick="openLightbox('assets/img/detergent-scoop.png','Detergent scoop product design in SolidWorks')">
-        <span class="cad-callout-badge">PRODUCT DESIGN</span>
-        <img src="assets/img/detergent-scoop.png" alt="Detergent scoop — SolidWorks" loading="lazy" class="w-full h-full object-cover" />
-        <div class="wireframe-overlay"></div>
-        <span class="zoom-hint">CLICK TO ZOOM</span>
+      <div class="cad-stage aspect-[4/3] cursor-zoom-in mb-4 relative rounded-lg overflow-hidden" onclick="openLightbox(this.querySelector('img').src, 'Detergent Scoop Product Design')">
+        <img src="assets/img/detergent-scoop.png" 
+             onerror="this.onerror=null; this.src='https://placehold.co/800x600/2563EB/ffffff?text=Detergent+Scoop';" 
+             alt="Detergent scoop — SolidWorks" loading="lazy" class="w-full h-full object-cover" />
       </div>
       <h3 class="font-display font-bold text-lg mb-1">Detergent Scoop</h3>
       <p class="text-sm mb-4" style="color:var(--metal)">
-        A simple consumer product modeled with fillets and shell features to achieve smooth,
-        manufacturable geometry — focused on usability.
+        Consumer product modeled with fillets and shell features to achieve smooth, manufacturable geometry.
       </p>
       <div class="flex items-center justify-between pt-2 border-t" style="border-color:var(--grid-line)">
         <span class="font-mono text-xs" style="color:var(--metal)">TOOLS: SOLIDWORKS</span>
@@ -262,35 +280,8 @@
         <div class="flex flex-wrap gap-2 text-xs font-mono">
           <span class="px-2.5 py-1 rounded border" style="border-color:var(--grid-line)">MECHANICAL DESIGN</span>
           <span class="px-2.5 py-1 rounded border" style="border-color:var(--grid-line)">CAD MODELLING</span>
-          <span class="px-2.5 py-1 rounded border" style="border-color:var(--grid-line)">3D MODELLING</span>
-          <span class="px-2.5 py-1 rounded border" style="border-color:var(--grid-line)">DFM</span>
-          <span class="px-2.5 py-1 rounded border" style="border-color:var(--grid-line)">DFA</span>
+          <span class="px-2.5 py-1 rounded border" style="border-color:var(--grid-line)">DFM / DFA</span>
           <span class="px-2.5 py-1 rounded border" style="border-color:var(--grid-line)">PROTOTYPING</span>
-          <span class="px-2.5 py-1 rounded border" style="border-color:var(--grid-line)">MATERIAL SELECTION</span>
-          <span class="px-2.5 py-1 rounded border" style="border-color:var(--grid-line)">COMPONENT INTEGRATION</span>
-        </div>
-      </div>
-      <div class="reveal">
-        <h3 class="font-mono text-xs tracking-widest mb-3" style="color:var(--metal)">MANUFACTURING &amp; WORKSHOP</h3>
-        <div class="flex flex-wrap gap-2 text-xs font-mono">
-          <span class="px-2.5 py-1 rounded border" style="border-color:var(--grid-line)">MACHINING</span>
-          <span class="px-2.5 py-1 rounded border" style="border-color:var(--grid-line)">FABRICATION</span>
-          <span class="px-2.5 py-1 rounded border" style="border-color:var(--grid-line)">3D PRINTING</span>
-          <span class="px-2.5 py-1 rounded border" style="border-color:var(--grid-line)">ASSEMBLY</span>
-          <span class="px-2.5 py-1 rounded border" style="border-color:var(--grid-line)">WORKSHOP OPERATIONS</span>
-          <span class="px-2.5 py-1 rounded border" style="border-color:var(--grid-line)">QUALITY CONTROL</span>
-          <span class="px-2.5 py-1 rounded border" style="border-color:var(--grid-line)">ENGINEERING SAFETY</span>
-        </div>
-      </div>
-      <div class="reveal">
-        <h3 class="font-mono text-xs tracking-widest mb-3" style="color:var(--metal)">ENGINEERING KNOWLEDGE</h3>
-        <div class="flex flex-wrap gap-2 text-xs font-mono">
-          <span class="px-2.5 py-1 rounded border" style="border-color:var(--grid-line)">ENGINEERING DRAWING</span>
-          <span class="px-2.5 py-1 rounded border" style="border-color:var(--grid-line)">MECHANICAL SYSTEMS</span>
-          <span class="px-2.5 py-1 rounded border" style="border-color:var(--grid-line)">ROBOTICS &amp; MECHATRONICS</span>
-          <span class="px-2.5 py-1 rounded border" style="border-color:var(--grid-line)">MANUFACTURING FUNDAMENTALS</span>
-          <span class="px-2.5 py-1 rounded border" style="border-color:var(--grid-line)">BASIC STRUCTURAL ANALYSIS</span>
-          <span class="px-2.5 py-1 rounded border" style="border-color:var(--grid-line)">MAINTENANCE AWARENESS</span>
         </div>
       </div>
     </div>
@@ -304,36 +295,16 @@
     <h2 class="font-display font-bold text-2xl sm:text-3xl md:text-4xl">Timeline.</h2>
   </div>
 
-  <div class="timeline-rail pl-6 sm:pl-8 space-y-8 sm:space-y-10 max-w-3xl">
+  <div class="space-y-8 sm:space-y-10 max-w-3xl border-l-2 pl-6" style="border-color:var(--grid-line)">
     <div class="reveal relative">
-      <span class="timeline-dot"></span>
       <p class="font-mono text-xs text-accent">2026</p>
       <h3 class="font-display font-bold text-base sm:text-lg">BS Mechanical Engineering — NUTECH, Islamabad</h3>
       <p class="text-xs sm:text-sm" style="color:var(--metal)">CGPA 3.02 / 4.00</p>
     </div>
     <div class="reveal relative">
-      <span class="timeline-dot"></span>
       <p class="font-mono text-xs text-accent">2025 &ndash; 2026</p>
-      <h3 class="font-display font-bold text-base sm:text-lg">ASME NUTECH Student Section — Social Media Head &amp; Co-Media Head</h3>
-      <p class="text-xs sm:text-sm" style="color:var(--metal)">Coordinated team activities and managed digital content for society events.</p>
-    </div>
-    <div class="reveal relative">
-      <span class="timeline-dot"></span>
-      <p class="font-mono text-xs text-accent">JUL &ndash; AUG 2025</p>
-      <h3 class="font-display font-bold text-base sm:text-lg">PAC Kamra — Internee</h3>
-      <p class="text-xs sm:text-sm" style="color:var(--metal)">Engineering standards, quality control practices, and technical documentation.</p>
-    </div>
-    <div class="reveal relative">
-      <span class="timeline-dot"></span>
-      <p class="font-mono text-xs text-accent">JAN &ndash; FEB 2025</p>
-      <h3 class="font-display font-bold text-base sm:text-lg">CDL Workshop — Internee</h3>
-      <p class="text-xs sm:text-sm" style="color:var(--metal)">Machining, fabrication, workshop operations, and industrial equipment handling.</p>
-    </div>
-    <div class="reveal relative">
-      <span class="timeline-dot"></span>
-      <p class="font-mono text-xs text-accent">FSc PRE-ENGINEERING</p>
-      <h3 class="font-display font-bold text-base sm:text-lg">FG Sir Syed College, Mall Road, Rawalpindi</h3>
-      <p class="text-xs sm:text-sm" style="color:var(--metal)">880 / 1100</p>
+      <h3 class="font-display font-bold text-base sm:text-lg">ASME NUTECH Student Section — Media Head</h3>
+      <p class="text-xs sm:text-sm" style="color:var(--metal)">Managed society events, digital content & media teams.</p>
     </div>
   </div>
 </section>
@@ -393,16 +364,67 @@
 </footer>
 
 <!-- ============================= LIGHTBOX ============================= -->
-<div id="lightbox" onclick="closeLightbox()" class="fixed inset-0 bg-black/80 z-50 hidden items-center justify-center p-4">
-  <img id="lightbox-img" src="" alt="" class="max-w-full max-h-full object-contain rounded-lg" />
+<div id="lightbox" onclick="closeLightbox()" class="fixed inset-0 bg-black/90 z-50 hidden flex items-center justify-center p-4">
+  <img id="lightbox-img" src="" alt="" class="max-w-full max-h-[90vh] object-contain rounded-lg" />
 </div>
 
+<!-- Built-in Functional JavaScript -->
 <script>
   function toggleMobileMenu() {
     const menu = document.getElementById('mobile-menu');
     menu.classList.toggle('hidden');
   }
+
+  function toggleTheme() {
+    const isDark = document.documentElement.classList.toggle('dark');
+    const iconDesktop = document.getElementById('theme-icon');
+    const iconMobile = document.getElementById('theme-icon-mobile');
+    
+    const iconText = isDark ? '☀️' : '🌙';
+    if(iconDesktop) iconDesktop.textContent = iconText;
+    if(iconMobile) iconMobile.textContent = iconText;
+    
+    localStorage.setItem('eng-theme', isDark ? 'dark' : 'light');
+  }
+
+  function toggleWireframe(btn) {
+    const card = btn.closest('article');
+    const stage = card.querySelector('.cad-stage');
+    const isPressed = btn.getAttribute('aria-pressed') === 'true';
+    
+    if (isPressed) {
+      stage.classList.remove('wireframe-active');
+      btn.setAttribute('aria-pressed', 'false');
+      btn.textContent = 'WIREFRAME: OFF';
+    } else {
+      stage.classList.add('wireframe-active');
+      btn.setAttribute('aria-pressed', 'true');
+      btn.textContent = 'WIREFRAME: ON';
+    }
+  }
+
+  function openLightbox(src, alt) {
+    const lightbox = document.getElementById('lightbox');
+    const img = document.getElementById('lightbox-img');
+    img.src = src;
+    img.alt = alt || '';
+    lightbox.classList.remove('hidden');
+  }
+
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.add('hidden');
+  }
+
+  // Set Theme state on load
+  (function initTheme() {
+    const savedEngTheme = localStorage.getItem('eng-theme');
+    if (savedEngTheme === 'dark' || (!savedEngTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+      if(document.getElementById('theme-icon')) document.getElementById('theme-icon').textContent = '☀️';
+      if(document.getElementById('theme-icon-mobile')) document.getElementById('theme-icon-mobile').textContent = '☀️';
+    }
+  })();
 </script>
-<script src="assets/js/main.js"></script>
+
 </body>
 </html>
