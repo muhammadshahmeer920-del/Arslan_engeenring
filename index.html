@@ -1,198 +1,408 @@
-<!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<!doctype html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Muhammad Shahmeer | Data & AI Engineering Portfolio</title>
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Google Fonts: Inter & JetBrains Mono -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            brandBg: '#F8F9FA',
-            brandDark: '#111827',
-            brandBlue: '#2563EB',
-            brandGray: '#E5E7EB',
-          },
-          fontFamily: {
-            sans: ['Inter', 'sans-serif'],
-            mono: ['JetBrains Mono', 'monospace'],
-          }
-        }
-      }
-    }
-  </script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Muhammad Arslan — Mechanical Engineering &amp; CAD Design Portfolio</title>
+<meta name="description" content="Muhammad Arslan — Mechanical Engineering graduate. SolidWorks CAD design, 3D modelling, prototyping, and product development portfolio." />
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    darkMode: 'class',
+    theme: {
+      extend: {
+        colors: {
+          ink: '#111827',
+          accent: '#2563EB',
+          canvas: '#F8F9FA',
+        },
+        fontFamily: {
+          display: ['Space Grotesk', 'sans-serif'],
+          body: ['Inter', 'sans-serif'],
+          mono: ['IBM Plex Mono', 'monospace'],
+        },
+      },
+    },
+  };
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&display=swap"
+  rel="stylesheet"
+/>
+<link rel="stylesheet" href="assets/css/style.css" />
 </head>
-<body class="bg-brandBg text-brandDark font-sans antialiased selection:bg-brandBlue selection:text-white">
+<body class="font-body antialiased">
 
-  <!-- Header / Navigation -->
-  <header class="sticky top-0 z-50 bg-brandBg/90 backdrop-blur-md border-b border-brandGray">
-    <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
-      <!-- Monogram Logo -->
-      <a href="#" class="flex items-center gap-2 font-mono font-bold text-lg text-brandDark group">
-        <span class="w-8 h-8 rounded bg-brandDark text-brandBlue flex items-center justify-center font-mono text-sm group-hover:bg-brandBlue group-hover:text-white transition-colors">MS</span>
-        <span>Shahmeer<span class="text-brandBlue">.dev</span></span>
-      </a>
-      
-      <!-- Nav Links -->
-      <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
-        <a href="#about" class="hover:text-brandBlue transition-colors">About</a>
-        <a href="#cases" class="hover:text-brandBlue transition-colors">Case Studies</a>
-        <a href="#skills" class="hover:text-brandBlue transition-colors">Skills</a>
-        <a href="#contact" class="bg-brandDark text-white px-4 py-2 rounded-md hover:bg-brandBlue transition-colors">Contact</a>
-      </nav>
-    </div>
-  </header>
-
-  <!-- Hero Section -->
-  <section id="about" class="max-w-5xl mx-auto px-6 py-20 md:py-28">
-    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-200 text-brandBlue text-xs font-mono mb-6">
-      <span class="w-2 h-2 rounded-full bg-brandBlue animate-pulse"></span>
-      Available for Data Science & AI Internships
-    </div>
+<!-- ============================= NAV ============================= -->
+<header class="sticky top-0 z-40 backdrop-blur bg-[var(--bg)]/85 border-b" style="border-color:var(--grid-line)">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
+    <a href="#top" class="font-display font-bold tracking-tight text-base sm:text-lg">MUHAMMAD ARSLAN</a>
     
-    <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight leading-tight text-brandDark max-w-4xl mb-6">
-      I build <span class="text-brandBlue">local AI automation pipelines</span>, security analytics tools, and C++ engines that convert complex problems into verifiable code.
+    <!-- Desktop Navigation -->
+    <nav class="hidden md:flex items-center gap-6 lg:gap-8 font-mono text-xs">
+      <a href="#projects" class="hover:text-accent transition-colors">PROJECTS</a>
+      <a href="#capabilities" class="hover:text-accent transition-colors">CAPABILITIES</a>
+      <a href="#experience" class="hover:text-accent transition-colors">EXPERIENCE</a>
+      <a href="#contact" class="hover:text-accent transition-colors">CONTACT</a>
+      <button onclick="toggleTheme()" aria-label="Toggle dark mode" class="border rounded px-2.5 py-1 hover:border-accent transition-colors" style="border-color:var(--grid-line)">
+        <span id="theme-icon">&#9789;</span>
+      </button>
+    </nav>
+
+    <!-- Mobile Navigation Toggle -->
+    <div class="flex items-center gap-3 md:hidden">
+      <button onclick="toggleTheme()" aria-label="Toggle dark mode" class="border rounded px-2 py-1 text-xs font-mono" style="border-color:var(--grid-line)">
+        <span id="theme-icon-mobile">&#9789;</span>
+      </button>
+      <button id="nav-toggle" onclick="toggleMobileMenu()" class="font-mono text-xs border rounded px-3 py-1 hover:bg-black/5 dark:hover:bg-white/5" style="border-color:var(--grid-line)">MENU</button>
+    </div>
+  </div>
+
+  <!-- Mobile Dropdown Menu -->
+  <div id="mobile-menu" class="hidden md:hidden px-4 pb-4 pt-2 flex flex-col gap-3 font-mono text-xs border-t" style="border-color:var(--grid-line)">
+    <a href="#projects" onclick="toggleMobileMenu()" class="py-1 hover:text-accent">PROJECTS</a>
+    <a href="#capabilities" onclick="toggleMobileMenu()" class="py-1 hover:text-accent">CAPABILITIES</a>
+    <a href="#experience" onclick="toggleMobileMenu()" class="py-1 hover:text-accent">EXPERIENCE</a>
+    <a href="#contact" onclick="toggleMobileMenu()" class="py-1 hover:text-accent">CONTACT</a>
+  </div>
+</header>
+
+<!-- ============================= HERO ============================= -->
+<section id="top" class="relative overflow-hidden">
+  <div class="absolute inset-0 blueprint-grid blueprint-grid-fade"></div>
+  <div class="relative max-w-6xl mx-auto px-4 sm:px-6 pt-12 sm:pt-20 pb-16 sm:pb-28 md:pt-28 md:pb-32">
+    <p class="font-mono text-xs tracking-widest text-accent mb-3 sm:mb-4">MECHANICAL ENGINEERING &middot; CAD &amp; PRODUCT DESIGN</p>
+    <h1 class="font-display font-bold text-3xl sm:text-5xl md:text-6xl leading-[1.1] max-w-3xl">
+      Precision mechanical design,<br class="hidden sm:block" /> modelled part by part.
     </h1>
-    
-    <p class="text-gray-600 text-lg md:text-xl max-w-2xl mb-8 leading-relaxed">
-      Data Science student at Air University. Focused on production-grade Python pipelines, custom LLM workflows with n8n, and low-level system design.
+    <p class="mt-4 sm:mt-6 max-w-xl text-sm sm:text-base md:text-lg" style="color:var(--metal)">
+      Mechanical Engineering graduate (NUTECH, 2026) specializing in SolidWorks CAD modelling,
+      mechanical assemblies, and product development — from a spherical amphibious surveillance
+      robot to structural brackets and consumer product design.
     </p>
-
-    <div class="flex flex-wrap items-center gap-4">
-      <a href="#cases" class="bg-brandBlue text-white font-medium px-6 py-3 rounded-lg shadow-sm hover:bg-blue-700 transition-colors">
-        View Case Studies &rarr;
+    <div class="mt-6 sm:mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4">
+      <a href="#projects" class="text-center px-6 py-3 rounded-md bg-accent text-white font-medium hover:opacity-90 transition">
+        View CAD Projects
       </a>
-      <a href="https://github.com" target="_blank" class="border border-brandGray bg-white text-brandDark font-medium px-6 py-3 rounded-lg hover:border-brandDark transition-colors flex items-center gap-2">
-        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
-        GitHub Repositories
+      <a href="#contact" class="text-center px-6 py-3 rounded-md border font-medium hover:bg-black/5 dark:hover:bg-white/5 transition" style="border-color:var(--grid-line)">
+        Technical Inquiry
       </a>
     </div>
-  </section>
-
-  <!-- Featured Case Studies -->
-  <section id="cases" class="max-w-5xl mx-auto px-6 py-16 border-t border-brandGray">
-    <div class="mb-12">
-      <h2 class="text-2xl md:text-3xl font-bold text-brandDark">Featured Case Studies</h2>
-      <p class="text-gray-600 mt-2">Real engineering proof, code repositories, and execution metrics.</p>
+    <div class="mt-10 sm:mt-12 flex flex-wrap gap-x-6 sm:gap-x-10 gap-y-2.5 font-mono text-xs" style="color:var(--metal)">
+      <span>SOLIDWORKS</span>
+      <span>AUTOCAD</span>
+      <span>MATLAB (BASIC)</span>
+      <span>DFM / DFA</span>
+      <span>PROTOTYPING</span>
     </div>
+  </div>
+</section>
 
-    <div class="grid grid-cols-1 gap-8">
-      
-      <!-- Case 1 -->
-      <div class="bg-white border border-brandGray rounded-xl p-8 shadow-sm hover:border-brandBlue transition-all">
-        <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
-          <span class="text-xs font-mono font-semibold px-2.5 py-1 bg-blue-50 text-brandBlue rounded">ETL / LOCAL AI PIPELINE</span>
-          <span class="text-xs font-mono text-gray-500">n8n • Slack API • Local CSV</span>
+<!-- ============================= PROJECTS ============================= -->
+<section id="projects" class="max-w-6xl mx-auto px-4 sm:px-6 py-14 sm:py-20 md:py-28">
+  <div class="reveal mb-8 sm:mb-12">
+    <p class="font-mono text-xs tracking-widest text-accent mb-2">CAD &amp; ENGINEERING PROJECTS</p>
+    <h2 class="font-display font-bold text-2xl sm:text-3xl md:text-4xl">Selected SolidWorks work.</h2>
+    <p class="mt-2 sm:mt-3 max-w-2xl text-sm sm:text-base" style="color:var(--metal)">
+      Every render below is a real SolidWorks screenshot from Muhammad's own portfolio —
+      click a card to zoom, or toggle wireframe inspection mode to inspect the geometry.
+    </p>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+
+    <!-- Project 1: FYP Amphibious Robot -->
+    <article class="reveal rounded-xl border p-4 sm:p-5 md:col-span-2" style="border-color:var(--grid-line); background:var(--bg-raised)">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
+        <div class="cad-stage aspect-[4/3] cursor-zoom-in relative rounded-lg overflow-hidden" onclick="openLightbox('assets/img/fyp-amphibious-robot.png','Amphibious Spherical Surveillance Robot FYP assembly in SolidWorks')">
+          <span class="cad-callout-badge">FYP &middot; 2025&ndash;2026</span>
+          <img src="assets/img/fyp-amphibious-robot.png" alt="Amphibious Spherical Surveillance Robot — SolidWorks assembly" loading="lazy" class="w-full h-full object-cover" />
+          <div class="wireframe-overlay"></div>
+          <span class="zoom-hint">CLICK TO ZOOM</span>
         </div>
-        <h3 class="text-xl font-bold text-brandDark mb-3">Dynamic Local CSV Data Cleaning Pipeline</h3>
-        <p class="text-gray-600 mb-6 leading-relaxed">
-          Built an automated data ingestion workflow using n8n and Slack triggers to clean raw web analytics data. Handles custom null values ('N/A', 'null'), removes duplicate session IDs, and pushes structured data summaries to Slack channels automatically.
-        </p>
-        <div class="flex items-center gap-4 text-sm font-mono text-brandBlue font-medium">
-          <a href="#" class="hover:underline">Inspect Architecture &rarr;</a>
-          <a href="#" class="text-gray-500 hover:text-brandDark">View GitHub Repo</a>
+        <div>
+          <h3 class="font-display font-bold text-lg sm:text-xl mb-1">Amphibious Spherical Surveillance Robot</h3>
+          <p class="font-mono text-xs text-accent mb-3">Mechanical / Product Design Team Member</p>
+          <p class="text-sm mb-4" style="color:var(--metal)">
+            A multi-terrain robotic product for land and water operation. Mechanical design combines
+            a transparent spherical shell with an internal mechanism of motors, gears, and linkages —
+            integrated with electronics, sensors, and camera systems for surveillance.
+          </p>
+          <dl class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm mb-4">
+            <div>
+              <dt class="font-mono text-xs" style="color:var(--metal)">TOOLS</dt>
+              <dd class="font-medium">SolidWorks</dd>
+            </div>
+            <div>
+              <dt class="font-mono text-xs" style="color:var(--metal)">SCOPE</dt>
+              <dd class="font-medium">CAD modelling, prototyping, assembly, testing</dd>
+            </div>
+            <div class="sm:col-span-2">
+              <dt class="font-mono text-xs" style="color:var(--metal)">ANALYSIS / PROTOTYPE STATUS</dt>
+              <dd class="text-xs sm:text-sm">Design modifications applied iteratively based on prototype performance and testing observations.</dd>
+            </div>
+          </dl>
+          <button onclick="toggleWireframe(this)" aria-pressed="false" class="w-full sm:w-auto font-mono text-xs border rounded px-3 py-2 sm:py-1.5 hover:bg-black/5 dark:hover:bg-white/5 transition" style="border-color:var(--grid-line)">
+            WIREFRAME: OFF
+          </button>
         </div>
       </div>
+    </article>
 
-      <!-- Case 2 -->
-      <div class="bg-white border border-brandGray rounded-xl p-8 shadow-sm hover:border-brandBlue transition-all">
-        <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
-          <span class="text-xs font-mono font-semibold px-2.5 py-1 bg-gray-100 text-gray-800 rounded">ANALYTICS & SECURITY</span>
-          <span class="text-xs font-mono text-gray-500">Python • Pandas • Power BI</span>
-        </div>
-        <h3 class="text-xl font-bold text-brandDark mb-3">Sentinel-X Security Vulnerability Analytics</h3>
-        <p class="text-gray-600 mb-6 leading-relaxed">
-          Engineered an automated log parsing script that ingests raw vulnerability feeds, deduplicates CVE records, and formats structured telemetry for Power BI dashboard reporting with zero data loss.
-        </p>
-        <div class="flex items-center gap-4 text-sm font-mono text-brandBlue font-medium">
-          <a href="#" class="hover:underline">Read Case Study &rarr;</a>
-          <a href="#" class="text-gray-500 hover:text-brandDark">View GitHub Repo</a>
-        </div>
+    <!-- Project 2: Robot Assembly -->
+    <article class="reveal rounded-xl border p-4 sm:p-5" style="border-color:var(--grid-line); background:var(--bg-raised)">
+      <div class="cad-stage aspect-[4/3] cursor-zoom-in mb-4 relative rounded-lg overflow-hidden" onclick="openLightbox('assets/img/robot-arm-assembly.png','Robot arm assembly in SolidWorks')">
+        <span class="cad-callout-badge">MATES &amp; MOTION</span>
+        <img src="assets/img/robot-arm-assembly.png" alt="Robot arm assembly — SolidWorks" loading="lazy" class="w-full h-full object-cover" />
+        <div class="wireframe-overlay"></div>
+        <span class="zoom-hint">CLICK TO ZOOM</span>
       </div>
-
-      <!-- Case 3 -->
-      <div class="bg-white border border-brandGray rounded-xl p-8 shadow-sm hover:border-brandBlue transition-all">
-        <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
-          <span class="text-xs font-mono font-semibold px-2.5 py-1 bg-gray-100 text-gray-800 rounded">SYSTEMS & C++</span>
-          <span class="text-xs font-mono text-gray-500">C++17 • SFML • OOP</span>
-        </div>
-        <h3 class="text-xl font-bold text-brandDark mb-3">C++ SFML Real-Time Matrix Simulation & Game Engine</h3>
-        <p class="text-gray-600 mb-6 leading-relaxed">
-          Developed a windowed graphics rendering application applying Object-Oriented Design patterns, memory-safe grid management, and steady 60 FPS frame-rate limiting.
-        </p>
-        <div class="flex items-center gap-4 text-sm font-mono text-brandBlue font-medium">
-          <a href="#" class="hover:underline">View Gameplay Code &rarr;</a>
-          <a href="#" class="text-gray-500 hover:text-brandDark">View GitHub Repo</a>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Technical Skills Grid -->
-  <section id="skills" class="max-w-5xl mx-auto px-6 py-16 border-t border-brandGray">
-    <div class="mb-10">
-      <h2 class="text-2xl font-bold text-brandDark">Technical Capabilities</h2>
-    </div>
-    
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 font-mono text-sm">
-      <div class="p-5 bg-white border border-brandGray rounded-lg">
-        <h4 class="font-bold text-brandDark mb-3 border-b border-brandGray pb-2">Languages & Core</h4>
-        <ul class="space-y-2 text-gray-600">
-          <li>• Python (Data Analysis)</li>
-          <li>• C++ (OOP & Memory)</li>
-          <li>• SQL & Relational Databases</li>
-          <li>• HTML5 / CSS3 / Tailwind</li>
-        </ul>
-      </div>
-
-      <div class="p-5 bg-white border border-brandGray rounded-lg">
-        <h4 class="font-bold text-brandDark mb-3 border-b border-brandGray pb-2">Data & AI Engineering</h4>
-        <ul class="space-y-2 text-gray-600">
-          <li>• Pandas & Data Cleaning</li>
-          <li>• n8n Pipeline Automation</li>
-          <li>• Power BI Dashboards</li>
-          <li>• Scikit-Learn Basics</li>
-        </ul>
-      </div>
-
-      <div class="p-5 bg-white border border-brandGray rounded-lg">
-        <h4 class="font-bold text-brandDark mb-3 border-b border-brandGray pb-2">Tools & Environments</h4>
-        <ul class="space-y-2 text-gray-600">
-          <li>• Git & GitHub Versioning</li>
-          <li>• VS Code & Linux Terminal</li>
-          <li>• Proteus Simulation</li>
-          <li>• Vercel / GitHub Pages</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Section / CTA -->
-  <section id="contact" class="max-w-5xl mx-auto px-6 py-20 border-t border-brandGray text-center">
-    <div class="max-w-xl mx-auto">
-      <h2 class="text-3xl font-extrabold text-brandDark mb-4">Let's Discuss Technical Projects</h2>
-      <p class="text-gray-600 mb-8">
-        Currently seeking data science opportunities and technical collaborations. Feel free to reach out directly.
+      <h3 class="font-display font-bold text-lg mb-1">Robot Assembly</h3>
+      <p class="text-sm mb-4" style="color:var(--metal)">
+        Multi-component robotic arm assembly. Individual parts modeled and assembled using mates
+        to define motion and alignment, demonstrating mechanical movement and part interaction.
       </p>
-      
-      <a href="mailto:shahmeer@example.com" class="inline-block bg-brandDark text-white font-medium px-8 py-4 rounded-lg hover:bg-brandBlue transition-colors shadow-sm">
-        Schedule a Technical Discussion
-      </a>
+      <div class="flex items-center justify-between pt-2 border-t" style="border-color:var(--grid-line)">
+        <span class="font-mono text-xs" style="color:var(--metal)">TOOLS: SOLIDWORKS</span>
+        <button onclick="toggleWireframe(this)" aria-pressed="false" class="font-mono text-xs border rounded px-2.5 py-1 hover:bg-black/5 dark:hover:bg-white/5" style="border-color:var(--grid-line)">
+          WIREFRAME: OFF
+        </button>
+      </div>
+    </article>
+
+    <!-- Project 3: Lunch Box -->
+    <article class="reveal rounded-xl border p-4 sm:p-5" style="border-color:var(--grid-line); background:var(--bg-raised)">
+      <div class="cad-stage aspect-[4/3] cursor-zoom-in mb-4 relative rounded-lg overflow-hidden" onclick="openLightbox('assets/img/lunch-box.png','Lunch box product design in SolidWorks')">
+        <span class="cad-callout-badge">IN-CONTEXT MODELING</span>
+        <img src="assets/img/lunch-box.png" alt="Lunch box — SolidWorks in-context modeling" loading="lazy" class="w-full h-full object-cover" />
+        <div class="wireframe-overlay"></div>
+        <span class="zoom-hint">CLICK TO ZOOM</span>
+      </div>
+      <h3 class="font-display font-bold text-lg mb-1">Lunch Box</h3>
+      <p class="text-sm mb-4" style="color:var(--metal)">
+        Created using in-context modeling, where components were designed within the assembly
+        environment — ensuring proper fit, alignment, and dimensional consistency while maintaining design intent.
+      </p>
+      <div class="flex items-center justify-between pt-2 border-t" style="border-color:var(--grid-line)">
+        <span class="font-mono text-xs" style="color:var(--metal)">TOOLS: SOLIDWORKS</span>
+        <button onclick="toggleWireframe(this)" aria-pressed="false" class="font-mono text-xs border rounded px-2.5 py-1 hover:bg-black/5 dark:hover:bg-white/5" style="border-color:var(--grid-line)">
+          WIREFRAME: OFF
+        </button>
+      </div>
+    </article>
+
+    <!-- Project 4: Bracket -->
+    <article class="reveal rounded-xl border p-4 sm:p-5" style="border-color:var(--grid-line); background:var(--bg-raised)">
+      <div class="cad-stage aspect-[4/3] cursor-zoom-in mb-4 relative rounded-lg overflow-hidden" onclick="openLightbox('assets/img/bracket.png','Mechanical bracket in SolidWorks')">
+        <span class="cad-callout-badge">STRUCTURAL</span>
+        <img src="assets/img/bracket.png" alt="Mechanical bracket — SolidWorks" loading="lazy" class="w-full h-full object-cover" />
+        <div class="wireframe-overlay"></div>
+        <span class="zoom-hint">CLICK TO ZOOM</span>
+      </div>
+      <h3 class="font-display font-bold text-lg mb-1">Bracket</h3>
+      <p class="text-sm mb-4" style="color:var(--metal)">
+        A basic mechanical bracket designed with structural support in mind. Fillets were added
+        to reduce stress concentration and improve strength.
+      </p>
+      <div class="flex items-center justify-between pt-2 border-t" style="border-color:var(--grid-line)">
+        <span class="font-mono text-xs" style="color:var(--metal)">TOOLS: SOLIDWORKS</span>
+        <button onclick="toggleWireframe(this)" aria-pressed="false" class="font-mono text-xs border rounded px-2.5 py-1 hover:bg-black/5 dark:hover:bg-white/5" style="border-color:var(--grid-line)">
+          WIREFRAME: OFF
+        </button>
+      </div>
+    </article>
+
+    <!-- Project 5: Detergent Scoop -->
+    <article class="reveal rounded-xl border p-4 sm:p-5" style="border-color:var(--grid-line); background:var(--bg-raised)">
+      <div class="cad-stage aspect-[4/3] cursor-zoom-in mb-4 relative rounded-lg overflow-hidden" onclick="openLightbox('assets/img/detergent-scoop.png','Detergent scoop product design in SolidWorks')">
+        <span class="cad-callout-badge">PRODUCT DESIGN</span>
+        <img src="assets/img/detergent-scoop.png" alt="Detergent scoop — SolidWorks" loading="lazy" class="w-full h-full object-cover" />
+        <div class="wireframe-overlay"></div>
+        <span class="zoom-hint">CLICK TO ZOOM</span>
+      </div>
+      <h3 class="font-display font-bold text-lg mb-1">Detergent Scoop</h3>
+      <p class="text-sm mb-4" style="color:var(--metal)">
+        A simple consumer product modeled with fillets and shell features to achieve smooth,
+        manufacturable geometry — focused on usability.
+      </p>
+      <div class="flex items-center justify-between pt-2 border-t" style="border-color:var(--grid-line)">
+        <span class="font-mono text-xs" style="color:var(--metal)">TOOLS: SOLIDWORKS</span>
+        <button onclick="toggleWireframe(this)" aria-pressed="false" class="font-mono text-xs border rounded px-2.5 py-1 hover:bg-black/5 dark:hover:bg-white/5" style="border-color:var(--grid-line)">
+          WIREFRAME: OFF
+        </button>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ============================= CAPABILITIES ============================= -->
+<section id="capabilities" class="py-14 sm:py-20 md:py-28" style="background:var(--bg-raised); border-top:1px solid var(--grid-line); border-bottom:1px solid var(--grid-line)">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <div class="reveal mb-8 sm:mb-12">
+      <p class="font-mono text-xs tracking-widest text-accent mb-2">TECHNICAL CAPABILITIES</p>
+      <h2 class="font-display font-bold text-2xl sm:text-3xl md:text-4xl">Tools &amp; engineering knowledge.</h2>
     </div>
-  </section>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+      <div class="reveal">
+        <h3 class="font-mono text-xs tracking-widest mb-3" style="color:var(--metal)">ENGINEERING SOFTWARE</h3>
+        <ul class="space-y-2 text-sm">
+          <li class="flex justify-between border-b py-2" style="border-color:var(--grid-line)"><span>SolidWorks</span><span class="font-mono text-xs text-accent font-semibold">CORE</span></li>
+          <li class="flex justify-between border-b py-2" style="border-color:var(--grid-line)"><span>AutoCAD</span><span class="font-mono text-xs" style="color:var(--metal)">PROFICIENT</span></li>
+          <li class="flex justify-between border-b py-2" style="border-color:var(--grid-line)"><span>MATLAB</span><span class="font-mono text-xs" style="color:var(--metal)">BASIC</span></li>
+          <li class="flex justify-between py-2"><span>Microsoft Office</span><span class="font-mono text-xs" style="color:var(--metal)">PROFICIENT</span></li>
+        </ul>
+      </div>
+      <div class="reveal">
+        <h3 class="font-mono text-xs tracking-widest mb-3" style="color:var(--metal)">MECHANICAL &amp; PRODUCT DESIGN</h3>
+        <div class="flex flex-wrap gap-2 text-xs font-mono">
+          <span class="px-2.5 py-1 rounded border" style="border-color:var(--grid-line)">MECHANICAL DESIGN</span>
+          <span class="px-2.5 py-1 rounded border" style="border-color:var(--grid-line)">CAD MODELLING</span>
+          <span class="px-2.5 py-1 rounded border" style="border-color:var(--grid-line)">3D MODELLING</span>
+          <span class="px-2.5 py-1 rounded border" style="border-color:var(--grid-line)">DFM</span>
+          <span class="px-2.5 py-1 rounded border" style="border-color:var(--grid-line)">DFA</span>
+          <span class="px-2.5 py-1 rounded border" style="border-color:var(--grid-line)">PROTOTYPING</span>
+          <span class="px-2.5 py-1 rounded border" style="border-color:var(--grid-line)">MATERIAL SELECTION</span>
+          <span class="px-2.5 py-1 rounded border" style="border-color:var(--grid-line)">COMPONENT INTEGRATION</span>
+        </div>
+      </div>
+      <div class="reveal">
+        <h3 class="font-mono text-xs tracking-widest mb-3" style="color:var(--metal)">MANUFACTURING &amp; WORKSHOP</h3>
+        <div class="flex flex-wrap gap-2 text-xs font-mono">
+          <span class="px-2.5 py-1 rounded border" style="border-color:var(--grid-line)">MACHINING</span>
+          <span class="px-2.5 py-1 rounded border" style="border-color:var(--grid-line)">FABRICATION</span>
+          <span class="px-2.5 py-1 rounded border" style="border-color:var(--grid-line)">3D PRINTING</span>
+          <span class="px-2.5 py-1 rounded border" style="border-color:var(--grid-line)">ASSEMBLY</span>
+          <span class="px-2.5 py-1 rounded border" style="border-color:var(--grid-line)">WORKSHOP OPERATIONS</span>
+          <span class="px-2.5 py-1 rounded border" style="border-color:var(--grid-line)">QUALITY CONTROL</span>
+          <span class="px-2.5 py-1 rounded border" style="border-color:var(--grid-line)">ENGINEERING SAFETY</span>
+        </div>
+      </div>
+      <div class="reveal">
+        <h3 class="font-mono text-xs tracking-widest mb-3" style="color:var(--metal)">ENGINEERING KNOWLEDGE</h3>
+        <div class="flex flex-wrap gap-2 text-xs font-mono">
+          <span class="px-2.5 py-1 rounded border" style="border-color:var(--grid-line)">ENGINEERING DRAWING</span>
+          <span class="px-2.5 py-1 rounded border" style="border-color:var(--grid-line)">MECHANICAL SYSTEMS</span>
+          <span class="px-2.5 py-1 rounded border" style="border-color:var(--grid-line)">ROBOTICS &amp; MECHATRONICS</span>
+          <span class="px-2.5 py-1 rounded border" style="border-color:var(--grid-line)">MANUFACTURING FUNDAMENTALS</span>
+          <span class="px-2.5 py-1 rounded border" style="border-color:var(--grid-line)">BASIC STRUCTURAL ANALYSIS</span>
+          <span class="px-2.5 py-1 rounded border" style="border-color:var(--grid-line)">MAINTENANCE AWARENESS</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <!-- Footer -->
-  <footer class="border-t border-brandGray py-8 bg-white text-center text-xs text-gray-500 font-mono">
-    <p>© 2026 Muhammad Shahmeer • Engineered with Tailwind CSS & Clean Aesthetics.</p>
-  </footer>
+<!-- ============================= EXPERIENCE TIMELINE ============================= -->
+<section id="experience" class="max-w-6xl mx-auto px-4 sm:px-6 py-14 sm:py-20 md:py-28">
+  <div class="reveal mb-8 sm:mb-12">
+    <p class="font-mono text-xs tracking-widest text-accent mb-2">ACADEMIC &amp; INDUSTRY EXPERIENCE</p>
+    <h2 class="font-display font-bold text-2xl sm:text-3xl md:text-4xl">Timeline.</h2>
+  </div>
 
+  <div class="timeline-rail pl-6 sm:pl-8 space-y-8 sm:space-y-10 max-w-3xl">
+    <div class="reveal relative">
+      <span class="timeline-dot"></span>
+      <p class="font-mono text-xs text-accent">2026</p>
+      <h3 class="font-display font-bold text-base sm:text-lg">BS Mechanical Engineering — NUTECH, Islamabad</h3>
+      <p class="text-xs sm:text-sm" style="color:var(--metal)">CGPA 3.02 / 4.00</p>
+    </div>
+    <div class="reveal relative">
+      <span class="timeline-dot"></span>
+      <p class="font-mono text-xs text-accent">2025 &ndash; 2026</p>
+      <h3 class="font-display font-bold text-base sm:text-lg">ASME NUTECH Student Section — Social Media Head &amp; Co-Media Head</h3>
+      <p class="text-xs sm:text-sm" style="color:var(--metal)">Coordinated team activities and managed digital content for society events.</p>
+    </div>
+    <div class="reveal relative">
+      <span class="timeline-dot"></span>
+      <p class="font-mono text-xs text-accent">JUL &ndash; AUG 2025</p>
+      <h3 class="font-display font-bold text-base sm:text-lg">PAC Kamra — Internee</h3>
+      <p class="text-xs sm:text-sm" style="color:var(--metal)">Engineering standards, quality control practices, and technical documentation.</p>
+    </div>
+    <div class="reveal relative">
+      <span class="timeline-dot"></span>
+      <p class="font-mono text-xs text-accent">JAN &ndash; FEB 2025</p>
+      <h3 class="font-display font-bold text-base sm:text-lg">CDL Workshop — Internee</h3>
+      <p class="text-xs sm:text-sm" style="color:var(--metal)">Machining, fabrication, workshop operations, and industrial equipment handling.</p>
+    </div>
+    <div class="reveal relative">
+      <span class="timeline-dot"></span>
+      <p class="font-mono text-xs text-accent">FSc PRE-ENGINEERING</p>
+      <h3 class="font-display font-bold text-base sm:text-lg">FG Sir Syed College, Mall Road, Rawalpindi</h3>
+      <p class="text-xs sm:text-sm" style="color:var(--metal)">880 / 1100</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= CONTACT ============================= -->
+<section id="contact" class="py-14 sm:py-20 md:py-28" style="background:var(--bg-raised); border-top:1px solid var(--grid-line)">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <div class="reveal mb-8 sm:mb-12">
+      <p class="font-mono text-xs tracking-widest text-accent mb-2">GET IN TOUCH</p>
+      <h2 class="font-display font-bold text-2xl sm:text-3xl md:text-4xl">Let's talk about a project.</h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
+      
+      <!-- WhatsApp Card Direct -->
+      <a href="https://wa.me/923125194994?text=Hi%20Arslan,%20I%20am%20interested%20in%20discussing%20a%20CAD/Mechanical%20project." 
+         target="_blank" rel="noopener" 
+         class="reveal group p-6 rounded-xl border transition-all hover:border-accent hover:-translate-y-1" style="border-color:var(--grid-line); background:var(--bg)">
+        <div class="w-10 h-10 rounded-lg bg-green-500/10 text-green-500 flex items-center justify-center mb-4 font-mono text-xl font-bold">
+          WA
+        </div>
+        <p class="font-mono text-xs text-accent mb-1">INSTANT CHAT</p>
+        <h3 class="font-display font-bold text-lg mb-2 group-hover:text-accent transition-colors">WhatsApp Direct</h3>
+        <p class="text-xs" style="color:var(--metal)">Click to send an instant message on WhatsApp (+92 312 5194994).</p>
+      </a>
+
+      <!-- LinkedIn Card -->
+      <a href="https://linkedin.com/in/muhammad-arslan-16ba99275" 
+         target="_blank" rel="noopener" 
+         class="reveal group p-6 rounded-xl border transition-all hover:border-accent hover:-translate-y-1" style="border-color:var(--grid-line); background:var(--bg)">
+        <div class="w-10 h-10 rounded-lg bg-accent/10 text-accent flex items-center justify-center mb-4">
+          <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+        </div>
+        <p class="font-mono text-xs text-accent mb-1">NETWORKING</p>
+        <h3 class="font-display font-bold text-lg mb-2 group-hover:text-accent transition-colors">LinkedIn Profile</h3>
+        <p class="text-xs" style="color:var(--metal)">Connect professionally or send an InMail query.</p>
+      </a>
+
+      <!-- Email Card -->
+      <a href="mailto:muhammadarslanpro08@gmail.com?subject=CAD%20Design%20Inquiry" 
+         class="reveal group p-6 rounded-xl border transition-all hover:border-accent hover:-translate-y-1" style="border-color:var(--grid-line); background:var(--bg)">
+        <div class="w-10 h-10 rounded-lg bg-blue-500/10 text-blue-500 flex items-center justify-center mb-4 font-mono text-xl font-bold">
+          @
+        </div>
+        <p class="font-mono text-xs text-accent mb-1">DIRECT MAIL</p>
+        <h3 class="font-display font-bold text-lg mb-2 group-hover:text-accent transition-colors">Email Direct</h3>
+        <p class="text-xs break-all" style="color:var(--metal)">muhammadarslanpro08@gmail.com</p>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<footer class="max-w-6xl mx-auto px-4 sm:px-6 py-8 flex flex-col sm:flex-row justify-between items-center gap-3 font-mono text-xs" style="color:var(--metal)">
+  <span>&copy; 2026 Muhammad Arslan</span>
+  <span>Rawalpindi, Punjab, Pakistan</span>
+</footer>
+
+<!-- ============================= LIGHTBOX ============================= -->
+<div id="lightbox" onclick="closeLightbox()" class="fixed inset-0 bg-black/80 z-50 hidden items-center justify-center p-4">
+  <img id="lightbox-img" src="" alt="" class="max-w-full max-h-full object-contain rounded-lg" />
+</div>
+
+<script>
+  function toggleMobileMenu() {
+    const menu = document.getElementById('mobile-menu');
+    menu.classList.toggle('hidden');
+  }
+</script>
+<script src="assets/js/main.js"></script>
 </body>
 </html>
